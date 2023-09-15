@@ -15,5 +15,10 @@ const content = fs.readFileSync(path.join(
 ), 'utf-8');
 
 // BEGIN
-console.log(content)
+
+const data = content.split('\n').slice(1).map((row) => row.split('|').slice(1).slice(0, -1).map((el) => el.trim()));
+
+// step 1
+console.log(`Count: ${data.length}`);
+
 // END
